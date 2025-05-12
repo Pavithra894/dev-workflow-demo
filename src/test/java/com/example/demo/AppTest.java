@@ -17,4 +17,10 @@ public class AppTest {
         Thread.sleep(1000); // Simulate slow test
         assertTrue(true);
     }
+    @Test
+    @Tag("slow")
+    public void slowTestDemo() throws InterruptedException {
+        Thread.sleep(4000); // Simulate slow test
+        assertTrue(true);
+    }
 }
