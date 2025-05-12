@@ -1,0 +1,27 @@
+name: PR Checklist Validator
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  check-pr-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR template checklist
+        run: |
+          CHECKLIST_ITEMS=(
+            "Code builds and tests pass"
+            "Unit tests cover the changes"
+            "Jira/Redmine link attached"
+            "Edge cases handled"
+          )
+          
+          PR_BODY=$(curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${GITHUB_SHA} | jq -r '.body')
+
+          for ITEM in "${CHECKLIST_ITEMS[@]}"; do
+            if [[ "$PR_BODY" != *"[x] $ITEM"* ]]; then
+              echo "Missing checklist item: $ITEM"
+              exit 1
+            fi
+          done
