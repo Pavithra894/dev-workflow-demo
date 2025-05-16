@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<checkstyle version="9.3">
-<file name="C:\Users\Pavithra.Manivannan\OneDrive - Hansen Technologies Limited\Desktop\Tech Talk\dev-workflow-techtalk-demo\src\main\java\com\example\demo\App.java">
-</file>
-<file name="C:\Users\Pavithra.Manivannan\OneDrive - Hansen Technologies Limited\Desktop\Tech Talk\dev-workflow-techtalk-demo\src\main\java\com\example\demo\package-info.java">
-</file>
+<checkstyle version="10.3.4">
 </checkstyle>

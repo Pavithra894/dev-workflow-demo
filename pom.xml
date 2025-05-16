@@ -39,7 +39,33 @@
           <excludedGroups>${excludedTags}</excludedGroups>
           <includedGroups>${includedTags}</includedGroups>
         </configuration>
-      </plugin>     
+      </plugin> 
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version> <!-- Use a stable version known to work -->
+        <dependencies>
+            <dependency>
+                <groupId>com.puppycrawl.tools</groupId>
+                <artifactId>checkstyle</artifactId>
+                <version>10.3.4</version> <!-- Compatible with plugin 3.1.2 -->
+            </dependency>
+        </dependencies>
+        <configuration>
+            <configLocation>checkstyle.xml</configLocation>
+            <encoding>UTF-8</encoding>
+            <consoleOutput>true</consoleOutput>
+            <failsOnError>true</failsOnError>
+        </configuration>
+        <executions>
+            <execution>
+                <phase>validate</phase>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>     
     </plugins> 
   </build>  
 </project>
