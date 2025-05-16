@@ -15,6 +15,7 @@ jobs:
             "Unit tests cover the changes"
             "Jira/Redmine link attached"
             "Edge cases handled"
+            "Acceptance criteria met"
           )
           
           PR_BODY=$(curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${GITHUB_SHA} | jq -r '.body')

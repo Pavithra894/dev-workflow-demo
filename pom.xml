@@ -31,6 +31,15 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.1.2</version>
       </plugin>
-    </plugins>
-  </build>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <excludedGroups>${excludedTags}</excludedGroups>
+          <includedGroups>${includedTags}</includedGroups>
+        </configuration>
+      </plugin>     
+    </plugins> 
+  </build>  
 </project>

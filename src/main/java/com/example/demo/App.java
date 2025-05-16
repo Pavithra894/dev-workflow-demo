@@ -11,8 +11,8 @@ public final class App {
      * @param args Command-line arguments
      */
     public static void main(final String[] args) {
-    System.out.println("Hello, Developer! Welcome to Tech Talk");
+        System.out.println("Hello, Developer! Welcome to Tech Talk");
         // This is a simple Java application.
-     System.out.println("This is a simple Java application.");
+        System.out.println("This is a simple Java application.");
     }
 }
